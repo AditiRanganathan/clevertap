@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Clevertap!!!</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="manifest" href="/manifest.json">
+
+    
+    <script type="text/javascript">
+        var clevertap = {event:[], profile:[], region:'in1', notifications:[], account:[], privacy:[]};
+        clevertap.account.push({"id": "TEST-ZRZ-K79-7W7Z"});
+        clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+        clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+        (function () {
+                var wzrk = document.createElement('script');
+                wzrk.type = 'text/javascript';
+                wzrk.async = true;
+                wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wzrk, s);
+        })();
+
+
+        function myFunction(){
+        clevertap.event.push("Product_Viewed Event", {
+        "Product ID":1,
+        "Product Name":"Clevertap",
+        "Name":"Aditi",
+        "Email ID": "aditi.ranganathan22@spit.ac.in"
+        });
+        }
+
+        function myFunction1(){
+        clevertap.notifications.push({
+        "titleText":'Would you like to receive Push Notifications?',
+        "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
+        "okButtonText":'Sign me up!',
+        "rejectButtonText":'No thanks',
+        "okButtonColor":'#f28046'});
+        }
+        
+</script>
+</head>
+<body>
+    <button type="button" onclick="myFunction()">Clevertap integration button!</button>
+    <button type="button" onclick="myFunction1()">Web Push button!</button>
+</body>
+</html>
